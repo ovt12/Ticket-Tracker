@@ -1,0 +1,22 @@
+.user {
+    border: 3px solid black;
+    width: 200px;
+    text-align: center;
+    padding-top: 1rem;
+    margin-bottom: 3rem;
+
+    &__details {
+        margin-bottom: 3rem;
+    }
+
+    &__name {
+        padding: 1rem;
+    }
+
+    &__role {
+        padding: 1rem;
+    }
+   
+
+}
+

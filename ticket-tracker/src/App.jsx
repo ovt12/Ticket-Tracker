@@ -1,28 +1,19 @@
-import './App.scss'
-import Counter from './Components/Counter/Counter';
+import "./App.scss";
 import User from "./Components/User/User";
-import Data from "./Data/names"
-import team from "../src/Data/names"
-import Header from "./Components/Header/Header"
-
-
-
+import team from "../src/Data/names";
+import Header from "./Components/Header/Header";
 
 function App() {
-
-const UserInfo = team.map(data => {
-  return <User name={data.name} role={data.role}/>
-})
-
-
-
+  const UserInfo = team.map((data) => {
+    return <User name={data.name} role={data.role} />;
+  });
 
   return (
     <div className="App">
-        <div className='App__heading'>
-            <Header/>
-            <h2>{UserInfo}</h2>
-        </div>
+      <Header />
+      <div className="App__details">
+        <div className="App__users">{UserInfo}</div>
+      </div>
     </div>
   );
 }
