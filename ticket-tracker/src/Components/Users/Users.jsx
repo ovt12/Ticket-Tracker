@@ -1,7 +1,6 @@
 import User from "../User/User";
 
 
-
 const Users = (props) => {
     const {users} = props;
 
