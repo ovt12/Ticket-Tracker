@@ -5,26 +5,37 @@ import Header from "./Components/Header/Header";
 import SearchBox from "./Components/SearchBox/SearchBox";
 import { useState } from "react";
 
+
+// Main App where everything is diplayed
+// need to make state to control the search term
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filtered, setFiltered] = useState("");
 
+
+
+
+// This function that handles the search term for the (user)
   const handleInput = (event) => {
     const cleanInput = event.target.value.toLowerCase();
     setSearchTerm(cleanInput);
 
+
+
+
+// This function filters the data so that its all lowercase & if the display matches the searchterm it will display else displays all users
     const filtered = team.filter((user) => {
       console.log(user);
       const userLowerCase = user.name.toLowerCase();
       return userLowerCase.includes(searchTerm) && user;
     });
+    
     setFiltered(filtered);
     console.log(filtered);
   };
 
-
   
-
+// The jsx of the application 
   return (
     <div className="App">
       <Header />
@@ -35,6 +46,7 @@ function App() {
         </div>
       </div>
       <div className="App__users">
+      {/* Ternary to display either filtered data or the whole of the data/ team */}
         <Users users={filtered.length > 0 ? filtered : team} />
       </div>
     </div>

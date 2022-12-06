@@ -2,13 +2,11 @@ import React from "react";
 import "../User/User.scss"
 import Counter from "../Counter/Counter";
 
+// Used props to get the data needed for the user
+// Again used prop destructoring 
 
-const User = (props) => {
-    const name = props.name
-    const role = props.role
-    
-
-    
+const User = ({name, role}) => {
+    // JSX for the user card
     return (
         <div className="user">
             <div className="user__details">

@@ -1,8 +1,10 @@
 import User from "../User/User";
 
+// Used prop destructoring again for readability
 
-const Users = (props) => {
-    const {users} = props;
+const Users = ({users}) => {
+    
+    // This maps over all of the users and displays the name and role 
 
     return (
         users.map(user => {
