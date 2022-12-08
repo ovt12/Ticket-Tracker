@@ -10,29 +10,26 @@ import { useState } from "react";
 // need to make state to control the search term
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filtered, setFiltered] = useState("");
-
-
+  // const [filtered, setFiltered] = useState("");
 
 
 // This function that handles the search term for the (user)
   const handleInput = (event) => {
     const cleanInput = event.target.value.toLowerCase();
     setSearchTerm(cleanInput);
-
+  };
 
 
 
 // This function filters the data so that its all lowercase & if the display matches the searchterm it will display else displays all users
-    const filtered = team.filter((user) => {
-      console.log(user);
-      const userLowerCase = user.name.toLowerCase();
-      return userLowerCase.includes(searchTerm) && user;
-    });
-    
-    setFiltered(filtered);
-    console.log(filtered);
-  };
+   
+  const filtered = team.filter((user) => {
+    console.log(user);
+    const userLowerCase = user.name.toLowerCase();
+    return userLowerCase.includes(searchTerm) && user;
+  });
+  
+  // setFiltered(filtered);
 
   
 // The jsx of the application 
